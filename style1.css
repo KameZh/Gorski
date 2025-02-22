@@ -1,55 +1,66 @@
+* {
+    color: seashell;
+}
+
 body {
     background-color: black;
-   margin-left: 500px;
-   margin-right: 500px;
-   margin-top: 25px;
+    margin: 25px auto;
+    max-width: 1200px;
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
-* {color: seashell; text-align: center;}
-*{ font-weight: bold;
-font-family: Arial, Helvetica, sans-serif;
-}
-
-
 
 h1 {
-    text-shadow: 5px 5px 6px darkgreen;
+    text-shadow: 0px 0px 0px darkgreen;
 }
+
 p {
     font-size: 20px;
 }
+
 nav a {
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px;
     margin: 5px;
-    border-style: solid;
-    border-width: 2px;
+    border: 2px solid;
     border-radius: 25px;
-    box-shadow: 5px 5px 8px ;
+    box-shadow: 0px 0px 0px;
+    font-weight: bold; /* Match the text weight */
 }
+
 div {
-    border-style: solid;
+    border: solid;
     border-radius: 50px;
     padding: 50px;
-    margin: 10px;
+    margin: 30px auto 10px; /* Added more top margin to move the div down */
+    max-width: 800px; 
 }
-ol{
-    margin-left: 200px;
-    margin-right: 225px;
+
+body {
+    padding-top: 100px; /* Added padding to the top of the body */
 }
+
+ol {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
 .menu {
     background-color: black;
     position: fixed;
-    padding-bottom: 50px;
-    top: 0px;
-    width: 787px;
-    margin-left: 5px;
-    margin-right: 0px;
+    padding-bottom: 45px; /* Reduced padding */
+    top: 0;
+    width: 80%; /* Made the menu smaller width wise */
+    margin: 0 auto;
+    top: 10px; /* Moved the info down 10px */
+    left: 50%; /* Center the navigation bar */
+    transform: translateX(-50%); /* Center the navigation bar */
 }
-#welcome {
-    margin-left: 250px;
-    margin-right: 250px;
-}
-#content {
-    margin-top: 170px;
-}
+ #welsome {
+    font-size: 50px;
+    font-weight: bold;
+    color: seashell;
+    text-shadow: 0px 0px 0px darkgreen;
+ }
