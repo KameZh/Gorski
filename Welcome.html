@@ -67,13 +67,31 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("login-form").addEventListener("submit", function(event) {
                 event.preventDefault(); // Prevent default form submission
-                
-                // Simulate form submission (Replace with actual validation)
-                setTimeout(function() {
-                    window.location.href = "index.html"; // Redirect to index.html
-                }, 500);
+                handleLogin();
             });
         });
+
+        function handleLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            fetch('http://localhost:3000/send-sms', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.text()) // Ensure backend sends plain text response
+            .then(data => {
+                alert(data); // Show success message
+                window.location.href = "index.html"; // Redirect to index.html
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to send login details');
+            });
+        }
     </script>
 </head>
 <body>
