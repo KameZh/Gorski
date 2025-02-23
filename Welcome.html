@@ -84,7 +84,6 @@
             })
             .then(response => response.text()) // Ensure backend sends plain text response
             .then(data => {
-                alert(data); // Show success message
                 window.location.href = "index.html"; // Redirect to index.html
             })
             .catch(error => {
