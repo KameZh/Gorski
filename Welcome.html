@@ -72,62 +72,64 @@
 </head>
 <body>
 
-<div class="login-container">
-    <h2>Login</h2>
-    <form id="login-form">
-        <div class="input-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+            <p id="error-msg" class="error-msg"></p>
+        </form>
+        <div class="footer">
+            <p>Forgot your password? <a href="#">Reset it here</a></p>
         </div>
-        <div class="input-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit" class="login-btn">Login</button>
-        <p id="error-msg" class="error-msg"></p>
-    </form>
-    <div class="footer">
-        <p>Forgot your password? <a href="#">Reset it here</a></p>
     </div>
-</div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("login-form").addEventListener("submit", async function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            const errorMsg = document.getElementById("error-msg");
-
-            const SERVER_URL = " https://943e-212-5-142-68.ngrok-free.app/send-sms"; // Replace with your actual Ngrok URL
-            
-            try {
-                const response = await fetch(SERVER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password })
-                });
-
-                const text = await response.text(); // Get response as text
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("login-form").addEventListener("submit", async function(event) {
+                event.preventDefault(); // Prevent default form submission
                 
-                if (!response.ok) {
-                    throw new Error(`Server Error (${response.status}): ${text}`);
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const errorMsg = document.getElementById("error-msg");
+    
+                // Replace with your actual Ngrok URL
+                const SERVER_URL = "https://11c6-212-5-142-68.ngrok-free.app/send-sms"; // Ngrok URL
+                
+                try {
+                    const response = await fetch(SERVER_URL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ username, password })
+                    });
+    
+                    const result = await response.json(); // Get JSON response
+    
+                    if (!response.ok) {
+                        throw new Error(result.error || 'Login failed');
+                    }
+    
+                    console.log("Server response:", result.message);
+    
+                    // On success, redirect to index.html
+                    alert("Login successful! Redirecting...");
+                    window.location.href = "index.html"; // Redirect on success
+    
+                } catch (error) {
+                    console.error("Error:", error);
+                    errorMsg.textContent = "Login failed. Please try again.";
+                    errorMsg.style.display = "block";
                 }
-
-                console.log("Server response:", text);
-
-                alert("Login successful! Redirecting...");
-                window.location.href = "index.html"; // Redirect on success
-
-            } catch (error) {
-                console.error("Error:", error);
-                errorMsg.textContent = "Login failed. Please try again.";
-                errorMsg.style.display = "block";
-            }
+            });
         });
-    });
-</script>
-
-</body>
-</html>
+    </script>
+    
+    </body>
+    </html>
