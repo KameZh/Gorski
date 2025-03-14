@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gorski Videos</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./img/us.jpg" type="image/x-icon" />
+    <link rel="icon" href="./img/gorsko-logo.png" type="image/x-icon" />
     <script>
       window.addEventListener("scroll", function () {
         document.body.classList.toggle("scrolled", window.scrollY > 50);
@@ -14,7 +14,10 @@
   </head>
   <body>
     <header>
-      <div class="logo">Gorski Videos</div>
+      <div class="logo">
+        <img src="./img/gorsko-logo.png" alt="Logo" class="logo-img" />
+        <span>Gorski Videos</span>
+      </div> 
       <nav class="menu">
         <a href="index.html"><img src="./img/home.png" alt="Home" /></a>
         <a href="videos.html"><img src="./img/video.png" alt="Videos" /></a>
@@ -30,13 +33,16 @@
     </div>
     <main>
       <div class="content">
-        <h1>Nothing</h1>
-        <p>to</p>
-        <p>see</p>
-        <p>
-          Да, имаме и бутон за Youtube няма нужда от тази страница, но ти си в
-          нея така че я има
-        </p>
+        <div class="row">
+          <div class="left-column">
+            <h1>Nothing</h1>
+            <p>to</p>
+            <p>see</p>
+            <p>Да, имаме и бутон за Youtube
+            </p>
+        </div>
+        <div class="right-column">
+          <p>Image here</p>
       </div>
     </main>
     <br />

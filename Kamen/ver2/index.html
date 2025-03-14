@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gorski Home</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="./img/us.jpg" type="image/x-icon" />
+    <link rel="icon" href="./img/gorsko-logo.png" type="image/x-icon" />
     <script>
       window.addEventListener("scroll", function () {
         document.body.classList.toggle("scrolled", window.scrollY > 50);
@@ -14,7 +14,10 @@
   </head>
   <body>
     <header>
-      <div class="logo">Gorski Home</div>
+      <div class="logo">
+        <img src="./img/gorsko-logo.png" alt="Logo" class="logo-img" />
+        <span>Gorski Home</span>
+      </div>    
       <nav class="menu">
         <a href="index.html"><img src="./img/home.png" alt="Home" /></a>
         <a href="videos.html"><img src="./img/video.png" alt="Videos" /></a>
@@ -30,15 +33,32 @@
     </div>
     <main>
       <div class="content">
-        <h1>Nothing here to see...</h1>
-        <p>yet...</p>
-        <p>or maybe not...</p>
-        <p>who knows?...</p>
-        <p>only time will tell...</p>
-        <p>this is just a template and nothing will show here...</p>
-        <p>but you can check the other pages...</p>
-        <p>oh wait there is nothing there yet</p>
-        <p>seriously why are you still here?</p>
+        <div class="row">
+          <div class="left-column">
+            <h1>Nothing here to see...</h1>
+            <p>yet...</p>
+            <p>or maybe not...</p>
+            <p>who knows?...</p>
+            <p>only time will tell...</p>
+            <p>this is just a template and nothing will show here...</p>
+            <p>but you can check the other pages...</p>
+            <p>oh wait there is nothing there yet</p>
+            <p>seriously why are you still here?</p>
+          </div>
+          <div class="right-column">
+            Image here
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-column">
+            <h1>Just another column</h1>
+            <p>more text here</p>
+            <p>and here</p>
+          </div>
+          <div class="right-column">
+            Image here
+          </div>
+        </div>
       </div>
     </main>
     <br />

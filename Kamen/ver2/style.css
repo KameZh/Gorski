@@ -25,9 +25,17 @@ header {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   color: white;
   font-size: 20px;
   font-weight: bold;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 40px;
+  height: 40px;
 }
 
 .menu {
@@ -73,8 +81,43 @@ main {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   margin: 50px;
   background-color: rgb(232, 232, 232);
   padding: 20px;
+  border-radius: 10px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.left-column {
+  flex: 1 1 60%;
+  text-align: left;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-column {
+  flex: 1 1 35%;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-column img {
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
 }

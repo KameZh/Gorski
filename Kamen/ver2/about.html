@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gorski About</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="./img/us.jpg" type="image/x-icon" />
+    <link rel="icon" href="./img/gorsko-logo.png" type="image/x-icon" />
     <script>
         window.addEventListener("scroll", function() {
             document.body.classList.toggle("scrolled", window.scrollY > 50);
@@ -14,7 +14,10 @@
 </head>
 <body>
     <header>
-        <div class="logo">Gorski About</div>
+        <div class="logo">
+            <img src="./img/gorsko-logo.png" alt="Logo" class="logo-img" />
+            <span>Gorski About</span>
+          </div> 
         <nav class="menu">
             <a href="index.html"><img src="./img/home.png" alt="Home"></a>
             <a href="videos.html"><img src="./img/video.png" alt="Videos"></a>
@@ -28,38 +31,49 @@
     </div>
     <main>
     <div class="content">
-        <h1>Отбор Горски</h1>
-    <p>Ние сме отбор от хора с минимални социални умения
-    </p>
-    </div>
-    <div class="content">
-    <h1>Какво сме ние</h1>
-    <p>Хора, с много високи амбиции
-    </p>
-    </div>
-    <div class="content">
-    <h1>Какво сме направили</h1>
-    <p>Създали сме сайт за (тема)
-    </div>
-    </p>
-    </p>
-    <div class="content">
-    <h1>Cъстав</h1>
-    <p>
-        <img src="img/us.jpg"
-        width="450px"
-       alt="Картината не зарежда"
-       title="Тази снимка трябва да се смени на всяка цена"> 
-       <br> Камен <strong>Жековски</strong> (Капитан) - HTML & CSS
-       <br> Алекс <strong>Тачев</strong> - HTML & CSS
-       <br> Крис <strong>Ал Тауил</strong> - Node.js & JS
-       <br> Кирил <strong>Елисеев</strong> - Node.js & JS
-    </p>
-    </div>
-   
-    </div>
-   <br> За повече информация изпратете e-mail на <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"> gorskite4@gmail.com</a>
-</body>
+        <div class="row">
+          <div class="left-column">
+            <h1>Отбор Горски</h1>
+            <p>Ние сме отбор от хора с минимални социални умения</p>
+          </div>
+          <div class="right-column">
+            <p>Image or text here</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-column">
+            <h1>Какво сме ние</h1>
+            <p>Хора, с много високи амбиции</p>
+          </div>
+          <div class="right-column">
+            <p>Image or text here</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-column">
+            <h1>Какво сме направили</h1>
+            <p>Създали сме сайт за (тема)</p>
+          </div>
+          <div class="right-column">
+            <p>Image or text here</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="left-column">
+            <h1>Cъстав</h1>
+            <p>
+              <br> Камен <strong>Жековски</strong> (Капитан) - HTML & CSS
+              <br> Алекс <strong>Тачев</strong> - HTML & CSS
+              <br> Крис <strong>Ал Тауил</strong> - Node.js & JS
+              <br> Кирил <strong>Елисеев</strong> - Node.js & JS
+            </p>
+          </div>
+          <div class="right-column">
+            <img src="img/us.jpg" width="450px" alt="Картината не зарежда" title="Тази снимка трябва да се смени на всяка цена"> 
+          </div>
+        </div>
+      </div>
+      <br> За повече информация изпратете e-mail на <a href="https://mail.google.com/mail/u/0/#inbox?compose=new"> gorskite4@gmail.com</a>
     </main>
 </body>
 </html>
