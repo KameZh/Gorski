@@ -6,6 +6,10 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
   background-color: white;
   text-align: center;
 }
@@ -72,6 +76,7 @@ body.scrolled .banner img {
 }
 
 main {
+  flex: 1;
   margin: 20px;
   font-size: 18px;
   background: white;
@@ -123,24 +128,22 @@ main {
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
   width: 100%;
   background-color: black;
   color: white;
   text-align: center;
   padding: 10px 0;
-  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 20px;
 }
 
 .footer-content {
   margin-left: 20px;
 }
 
-.footer-content a{
+.footer-content a {
   color: white;
 }
 
