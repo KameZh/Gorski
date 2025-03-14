@@ -121,3 +121,43 @@ main {
   height: auto;
   border-radius: 10px;
 }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content {
+  margin-left: 20px;
+}
+
+.footer-content a{
+  color: white;
+}
+
+.footer-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 20px;
+}
+
+.footer-menu a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-bottom: 5px;
+}
+
+.footer-menu a:hover {
+  color: gray;
+}
