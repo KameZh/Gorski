@@ -238,7 +238,9 @@ button:hover {
 
 span.psw {
   float: right;
-  padding-top: 16px;
+}
+span.rmb {
+  float: left;
 }
 
 @media screen and (max-width: 300px) {
@@ -246,7 +248,8 @@ span.psw {
     display: block;
     float: none;
   }
-  .cancelbtn {
-    width: 100%;
+  span.rmb {
+    display: block;
+    float: none;
   }
 }
