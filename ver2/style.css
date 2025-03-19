@@ -205,14 +205,14 @@ footer {
 }
 
 form {
-  margin: auto; /* Center the form horizontally and vertically */
+  margin: auto;
   border: 3px solid #f1f1f1;
   padding: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   width: 100%;
-  max-width: 400px; /* Set a max-width for the form */
+  max-width: 400px;
 }
 
 .container {
