@@ -1,13 +1,16 @@
 const http = require('http');
 const express = require("express");
 const { createServer } = require('node:http');
+const path = require('path')
 
-const server = createServer(app);
 const app = express();
+const server = createServer(app);
 
-app.get('/', (req, res) => {
-  res.sendFile(join(__dirname, 'index.html'));
-});
+app.use(express.static('./'))
+
+ app.get('/', (req, res) => {
+   res.sendFile(path.join(__dirname, 'index.html'));
+ });
 server.on('connection',(socket) => {
     console.log('New connection');
 })
