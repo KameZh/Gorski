@@ -191,3 +191,9 @@ footer {
   opacity: 0.6;
   color: green;
 }
+
+#k2 {
+  width: 150%;
+  height: auto;
+  border-radius: 10px;
+}
