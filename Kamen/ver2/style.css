@@ -164,3 +164,30 @@ footer {
 .footer-menu a:hover {
   color: gray;
 }
+
+#video-header {
+  flex: 1 1 100%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.left-column a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  padding: 100px 30px;
+  margin: 20px 0;
+  text-decoration: none;
+  transition: color 0.3s;
+  margin-bottom: 5px;
+  color: black;
+}
+.left-column a:hover {
+  opacity: 0.6;
+  color: green;
+}
