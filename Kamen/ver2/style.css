@@ -236,17 +236,6 @@ button:hover {
   opacity: 0.8;
 }
 
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
 span.psw {
   float: right;
   padding-top: 16px;
