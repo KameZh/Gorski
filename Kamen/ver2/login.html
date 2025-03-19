@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gorski Login</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./img/gorsko-logo.png" type="image/x-icon" />
+    <script>
+      window.addEventListener("scroll", function () {
+        document.body.classList.toggle("scrolled", window.scrollY > 50);
+      });
+    </script>
+  </head>
+<body>
+    <header>
+        <div class="logo">
+          <img src="./img/gorsko-logo.png" alt="Logo" class="logo-img" />
+          <span>Gorski Home</span>
+        </div>    
+        <nav class="menu">
+          <a href="index.html"><img src="./img/home.png" alt="Home" /></a>
+          <a href="videos.html"><img src="./img/trophy.png" alt="Videos" /></a>
+          <a href="https://www.youtube.com/" target="_blank"><img src="./img/youtube-118.png" alt="YouTube"/></a>
+          <a href="about.html"><img src="./img/info.png" alt="About" /></a>
+          <a href="contact.html"><img src="./img/contacts.png" alt="Contacts" /></a>
+          <a href="login.html"><img src="./img/login.png" alt="Login" /></a>
+        </nav>
+      </header>
+  
+      <div class="banner">
+        <img src="./img/forest_back.jpg" alt="Forest Background" />
+      </div>
+    <form action="./index.html" method="post">
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</body>
+</html>
